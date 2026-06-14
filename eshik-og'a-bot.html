@@ -44,16 +44,11 @@
         // Ilovani to'liq ekranga yoyish
         tg.expand();
 
-        function checkAnswer(answer) {
+      function checkAnswer(answer) {
             if (answer === 4) {
-                // To'g'ri topsa
-                tg.showAlert("Tabriklaymiz! Siz muvaffaqiyatli o'tdingiz.", function() {
-                    // Haqiqiy loyihada bu yerda botingiz serveriga (API) ma'lumot jo'natiladi
-                    // va bot foydalanuvchini guruhga `approve` qiladi.
-                    tg.close(); // Oynani yopish
-                });
+                // To'g'ri topsa, botga ma'lumot yuboramiz va oyna avtomatik yopiladi
+                tg.sendData("success"); 
             } else {
-                // Xato topsa
                 tg.showAlert("Xato javob! Iltimos qaytadan urinib ko'ring.");
             }
         }
