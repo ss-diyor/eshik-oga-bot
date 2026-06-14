@@ -38,20 +38,17 @@
     <button class="btn" onclick="checkAnswer(5)">5</button>
 
     <script>
-        // Telegram Web App obyektini chaqirish
-        const tg = window.Telegram.WebApp;
-        
-        // Ilovani to'liq ekranga yoyish
-        tg.expand();
+    const tg = window.Telegram.WebApp;
+    tg.expand();
 
-      function checkAnswer(answer) {
-            if (answer === 4) {
-                // To'g'ri topsa, botga ma'lumot yuboramiz va oyna avtomatik yopiladi
-                tg.sendData("success"); 
-            } else {
-                tg.showAlert("Xato javob! Iltimos qaytadan urinib ko'ring.");
-            }
+    function checkAnswer(answer) {
+        if (answer === 4) {
+            // Javob to'g'ri bo'lsa, botga "success" signalini jo'natamiz
+            tg.sendData("success");
+        } else {
+            tg.showAlert("Xato javob! Iltimos, qaytadan urinib ko'ring.");
         }
-    </script>
+    }
+</script>
 </body>
 </html>
